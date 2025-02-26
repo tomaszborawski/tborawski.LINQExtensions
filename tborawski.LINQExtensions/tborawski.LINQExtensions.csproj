@@ -10,6 +10,7 @@
 	  <Copyright>Tomasz Borawski</Copyright>
 	  <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/tomaszborawski/tborawski.LINQExtensions</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
 	  <None Include="README.md">
