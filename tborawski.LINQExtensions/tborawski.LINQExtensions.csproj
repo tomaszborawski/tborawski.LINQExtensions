@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	  <TargetFrameworks>NETStandard2.0</TargetFrameworks>
+	  <TargetFrameworks>NETStandard2.0;net461</TargetFrameworks>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Title>LINQ Extensions</Title>
+	  <Company>Tomasz Borawski</Company>
+	  <Description>LINQ Extensions</Description>
+	  <Copyright>Tomasz Borawski</Copyright>
+	  <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+	  <None Include="README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+	  </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35728.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tborawski.LINQExtensions.Tests", "tborawski.LINQExtensions.Tests\tborawski.LINQExtensions.Tests.csproj", "{E78E156A-60C0-4F7B-9DD5-5E9434FB2C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tborawski.LINQExtensions", "tborawski.LINQExtensions\tborawski.LINQExtensions.csproj", "{1F18CFA0-1601-4918-8225-F2490FA7EB32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E78E156A-60C0-4F7B-9DD5-5E9434FB2C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E78E156A-60C0-4F7B-9DD5-5E9434FB2C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E78E156A-60C0-4F7B-9DD5-5E9434FB2C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E78E156A-60C0-4F7B-9DD5-5E9434FB2C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F18CFA0-1601-4918-8225-F2490FA7EB32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F18CFA0-1601-4918-8225-F2490FA7EB32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F18CFA0-1601-4918-8225-F2490FA7EB32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F18CFA0-1601-4918-8225-F2490FA7EB32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
