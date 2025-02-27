@@ -4,7 +4,7 @@
 	  <TargetFrameworks>NETStandard2.0;net461</TargetFrameworks>
 	  <ImplicitUsings>disable</ImplicitUsings>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <Title>LINQ Extensions</Title>
+	  <Title>LINQ Extensions Pivot and Unpivot</Title>
 	  <Company>Tomasz Borawski</Company>
 	  <Description>LINQ Extensions</Description>
 	  <Copyright>Tomasz Borawski</Copyright>
