@@ -12,19 +12,19 @@ namespace System.Linq
             where TResult : IEquatable<TResult>
             where TPivotColumns : IEquatable<TPivotColumns>
         {
-            var list = new List<TResult>();
+            var list = new Dictionary<TResult, TResult>();
             var agglist = source.GroupBy(o => new { selector = selector(o), pivotSelector = pivotSelector(o) });
             foreach (var agg in agglist)
             {
                 TResult result;
                 var newobj = agg.Key.selector;
-                var oldobj = list.FirstOrDefault(o => newobj.Equals(o));
-                if (oldobj != null)
+                TResult oldobj;
+                if (list.TryGetValue(newobj, out oldobj))
                     result = oldobj;
                 else
                 {
                     result = newobj;
-                    list.Add(result);
+                    list.Add(result, result);
                 }
 
                 var value = pivotAggfunction(agg);
@@ -33,7 +33,7 @@ namespace System.Linq
                 var pi = t.GetProperty(colname);
                 pi.SetValue(result, value, null);
             }
-            return list;
+            return list.Values.ToList();
         }
 
         public static IEnumerable<TResult> Pivot<TSource, TPivotColumns, TPivotResult, TResult>(this ParallelQuery<TSource> source,
@@ -42,19 +42,19 @@ namespace System.Linq
             where TResult : IEquatable<TResult>
             where TPivotColumns : IEquatable<TPivotColumns>
         {
-            var list = new ConcurrentBag<TResult>();
+            var list = new ConcurrentDictionary<TResult, TResult>();
             var agglist = source.GroupBy(o => new { selector = selector(o), pivotSelector = pivotSelector(o) });
             Parallel.ForEach(agglist, agg =>
             {
                 TResult result;
                 var newobj = agg.Key.selector;
-                var oldobj = list.FirstOrDefault(o => newobj.Equals(o));
-                if (oldobj != null)
+                TResult oldobj;
+                if (list.TryGetValue(newobj, out oldobj))
                     result = oldobj;
                 else
                 {
                     result = newobj;
-                    list.Add(result);
+                    list.TryAdd(result, result);
                 }
 
 
@@ -64,7 +64,7 @@ namespace System.Linq
                 var pi = t.GetProperty(colname);
                 pi.SetValue(result, value, null);
             });
-            return list;
+            return list.Values.ToList();
         }
     }
 }
