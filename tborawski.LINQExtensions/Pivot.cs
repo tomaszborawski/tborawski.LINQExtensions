@@ -54,7 +54,7 @@ namespace System.Linq
                 else
                 {
                     result = newobj;
-                    list.TryAdd(result, result);
+                    if (!list.TryAdd(result, result)) list.TryGetValue(newobj, out result);
                 }
 
 
