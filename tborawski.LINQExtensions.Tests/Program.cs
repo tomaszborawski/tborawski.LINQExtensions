@@ -12,7 +12,7 @@ namespace tborawski.LINQExtension.Tests
             var rand = new Random();
             for (int i = 0; i < 10000000; i++)
             {
-                    list.Add(new DataToConvert() { CustomerID = rand.Next(3), Data = DateTime.Now.AddDays(rand.Next(90)), Value = rand.NextDouble() });
+                    list.Add(new DataToConvert() { CustomerID = rand.Next(10), Data = DateTime.Now.AddDays(rand.Next(365)), Value = rand.NextDouble() });
             }
 
             //Pivot
