@@ -6,7 +6,7 @@
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	  <Title>LINQ Extensions Pivot and Unpivot</Title>
 	  <Company>Tomasz Borawski</Company>
-	  <Description>LINQ Extensions</Description>
+	  <Description>LINQ Extensions Pivot and Unpivot</Description>
 	  <Copyright>Tomasz Borawski</Copyright>
 	  <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
