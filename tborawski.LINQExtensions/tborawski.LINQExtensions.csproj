@@ -13,9 +13,10 @@
 	  <PackageProjectUrl>https://github.com/tomaszborawski/tborawski.LINQExtensions</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-	  <None Include="README.md">
+	  <None Include="ReadMe.md">
 		  <Pack>True</Pack>
 		  <PackagePath>\</PackagePath>
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
   </ItemGroup>
 
