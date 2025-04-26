@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
+using tborawski.LINQExtensions.Tests;
 namespace tborawski.LINQExtension.Tests
 {
     internal class Program
@@ -57,6 +58,12 @@ namespace tborawski.LINQExtension.Tests
             var unpivotp = pivot.AsParallel().Unpivot((o, p, v) => new DataToConvert() { CustomerID = o.CustomerID, Data = new DateTime(o.Year, Convert.ToInt32(p.Substring(1)), 1), Value = v }, unmap);
             sw.Stop();
             Console.WriteLine($"Unpivot Parallel {sw.Elapsed.Milliseconds}");
+
+            var listobj = new List<ToDataTableObject>();
+            listobj.Add(new ToDataTableObject() { bytes = new byte[10], Guid = Guid.NewGuid(), NGuid = Guid.NewGuid(), Id = 1, s = "test", xxx = 2, data = DateTime.Now, ndata = DateTime.Now });
+            listobj.Add(new ToDataTableObject() { bytes = null, Guid = Guid.NewGuid(), NGuid = null, Id = 2, xxx = null, s = null, data = DateTime.Now, ndata = null });
+            var dt = listobj.ToDataTable();
+            Console.WriteLine($"Datatable columns {dt.Columns.Count} rows {dt.Rows.Count}");
         }
     }
 }
