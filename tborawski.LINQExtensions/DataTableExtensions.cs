@@ -10,10 +10,9 @@ namespace System.Linq
         public static DataTable ToDataTable<T>(this IEnumerable<T> list)
         {
             var t = typeof(T);
-            var props = t.GetProperties();
-            var data = new DataTable();
-
             var nullt = typeof(Nullable<>);
+            var props = t.GetProperties().Where(o => !o.PropertyType.IsGenericType || o.PropertyType.GetGenericTypeDefinition() == nullt).ToList();
+            var data = new DataTable();
             foreach (var prop in props)
             {
                 data.Columns.Add(new DataColumn()
@@ -27,7 +26,7 @@ namespace System.Linq
 
             foreach (var item in list)
             {
-                var objarray = new object[props.Length];
+                var objarray = new object[props.Count];
                 int i = 0;
                 foreach (var prop in props)
                 {
