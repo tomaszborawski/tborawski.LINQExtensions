@@ -11,7 +11,7 @@ namespace System.Linq
         {
             var t = typeof(T);
             var nullt = typeof(Nullable<>);
-            var props = t.GetProperties().Where(o => !o.PropertyType.IsGenericType || o.PropertyType.GetGenericTypeDefinition() == nullt).ToList();
+            var props = t.GetProperties().Where(o => o.PropertyType.IsValueType || o.PropertyType == typeof(string) || o.PropertyType == typeof(byte[]) || (o.PropertyType.IsGenericType && o.PropertyType.GetGenericTypeDefinition() == nullt)).ToList();
             var data = new DataTable();
             foreach (var prop in props)
             {
@@ -20,7 +20,7 @@ namespace System.Linq
                     ColumnName = prop.Name,
                     DataType = prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == nullt ? prop.PropertyType.GetGenericArguments()[0] : prop.PropertyType,
                     AllowDBNull = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == nullt) || 
-                    prop.PropertyType == typeof(string) || prop.PropertyType.IsArray
+                    prop.PropertyType == typeof(string) || prop.PropertyType == typeof(byte[])
                 });
             }
 
