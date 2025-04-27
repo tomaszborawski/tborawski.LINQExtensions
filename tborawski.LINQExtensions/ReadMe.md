@@ -9,3 +9,9 @@
 
 ## ToDataTable Extension in LINQ
 ### Convert IEnumerable<T> to DataTable
+
+## ToEnumerable Extension in LINQ
+### Convert DataTable to IEnumerable<T>
+
+## To ToObservableCollection in LINQ
+### Materialize IEnumerable<T> to ObservableCollection<T>

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Text;
 
 namespace System.Linq
 {
-    public static class DataTableExtensions
+    public static class EnumerableExtensions
     {
         public static DataTable ToDataTable<T>(this IEnumerable<T> list)
         {
@@ -40,6 +41,16 @@ namespace System.Linq
                 data.Rows.Add(objarray);
             }
             return data;
+        }
+
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> data)
+        {
+            var list = new ObservableCollection<T>();
+            foreach (var item in data) 
+            { 
+                list.Add(item); 
+            } 
+            return list;
         }
     }
 }

@@ -64,6 +64,8 @@ namespace tborawski.LINQExtension.Tests
             listobj.Add(new ToDataTableObject() { bytes = null, Guid = Guid.NewGuid(), NGuid = null, Id = 2, xxx = null, s = null, data = DateTime.Now, ndata = null });
             var dt = listobj.ToDataTable();
             Console.WriteLine($"Datatable columns {dt.Columns.Count} rows {dt.Rows.Count}");
+            var dtenumerable = dt.ToEnumerable<ToDataTableObject>();
+            var dtobservable = dtenumerable.ToObservableCollection();
         }
     }
 }
